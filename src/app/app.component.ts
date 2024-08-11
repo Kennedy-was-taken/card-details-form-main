@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { ValidateService } from './service/validate.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,33 +13,45 @@ export class AppComponent {
   
   title = 'interactive-card-details-form-main';
 
-  labels = document.getElementsByClassName('image_front_card_number');
-  inputs = document.querySelector('#CardsNumbers');
+  // labels = document.getElementsByClassName('image_front_card_number');
+  // inputs = document.querySelector('#CardsNumbers');
 
+  //ids
+  card_holder_id = document.getElementById("card_holder");
+  card_number_id = document.getElementById("card_number");
+  exp_mm_id = document.getElementById("exp_mm");
+  exp_yy_id = document.getElementById("exp_yy");
+  cvc_id = document.getElementById("cvc");
+
+  // placeholder
   card_number_placeholder = "1234 5678 9123 0000";
   card_holder_placeholder: string = "Jane Appleased";
   exp_mm_placeholder: string = '01';
   exp_yy_placeholder: string = '20';
   cvc_placeholder: string = '000';
 
+  //content
   card_number_content: string = '';
   card_holder_content: string = '';
   exp_mm_content: string = '';
   exp_yy_content: string = '';
   cvc_content: string = '';
 
+  //values
   card_number_value : string = "";
   card_holder_value : string = "";
   exp_mm_value : string = '';
   exp_yy_value : string = '';
   cvc_value : string = '';
 
+  //ngModel names
   card_holder: string = '';
   card_number: string = '';
   exp_mm: string = '';
   exp_yy: string = '';
   cvc: string = '';
 
+  //bool values
   card_number_bool : boolean = false;
   card_holder_bool: boolean = false;
   exp_mm_bool: boolean = false;
@@ -59,14 +73,68 @@ export class AppComponent {
 
   public onSubmit(): void {
     
-    this.card_holder_bool = this.validate.checkCardName(this.card_holder_content);
-    this.card_number_bool = this.validate.checkCardNumber(this.card_number_content);
-    this.exp_mm_bool = this.validate.checkCardMonth(this.exp_mm_content);
-    this.exp_yy_bool = this.validate.checkCardNumber(this.exp_yy_content);
-    this.cvc_bool = this.validate.checkCardcvc(this.cvc_content);
+    this.card_holder_bool = this.validate.checkCardName(this.card_holder);
+    this.card_number_bool = this.validate.checkCardNumber(this.card_number);
+    this.exp_mm_bool = this.validate.checkCardMonth(this.exp_mm);
+    this.exp_yy_bool = this.validate.checkCardYear(this.exp_yy);
+    this.cvc_bool = this.validate.checkCardCvc(this.cvc);
 
     // this.validate.initValidation(this.card_holder_content, this.card_number_content, this.exp_mm_content, this.exp_yy_content, this.cvc_content);
     console.log("I was clicked");
+  }
+
+  public changeBorder(): void{
+
+    if(this.card_number_bool == true){
+      // this.card_holder_id.style.borderColor = "#a94442";
+      // document.getElementById("card_holder").style.border = "#a94442";
+      
+      this.card_holder_id!.style.borderColor  = "#a94442";
+    }
+
+    else{
+      this.card_holder_id!.style.borderColor  = "unset";
+    }
+
+    if(this.card_holder_bool == true){
+
+      this.card_number_id!.style.borderColor  = "#a94442";
+    }
+
+    else{
+      this.card_number_id!.style.borderColor  = "unset";
+    }
+
+    if(this.exp_mm_bool == true){
+
+      this.exp_mm_id!.style.borderColor  = "#a94442";
+    }
+
+    else{
+      this.exp_mm_id!.style.borderColor  = "unset";
+    }
+
+    if(this.exp_yy_bool == true){
+
+      this.exp_yy_id!.style.borderColor  = "#a94442";
+    }
+
+    else{
+      this.exp_yy_id!.style.borderColor  = "unset";
+    }
+
+    if(this.cvc_bool == true){
+
+      this.cvc_id!.style.borderColor  = "#a94442";
+    }
+
+    else{
+      this.cvc_id!.style.borderColor  = "unset";
+    }
+  }
+
+  public test() : boolean{
+    return true;
   }
 
   public keyFuncCardName(x: KeyboardEvent): void {

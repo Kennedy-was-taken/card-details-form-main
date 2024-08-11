@@ -1,67 +1,70 @@
 <!-- gridview -->
 <section class="card_information_container">
 
-  <!-- First grid -->
-  <div class="card_background"></div>
+    <!-- First grid -->
+    <div class="card_background"></div>
 
-  <!-- Second grid -->
-  <div class="card_information">
+    <!-- Second grid -->
+    <div class="card_information">
 
-      <!-- put the form here -->
+        <!-- put the form here -->
 
-      <!-- input area -->
-      <div class="info-container">
-          <!-- <form #forms4="ngForm"> -->
-              <!-- name holder -->
-              <label>cardholder name</label>
-              <input id="card_holder" class="cardholder_name form-control" name="card_holder"
-                  [(ngModel)]="card_holder" (keyup)="keyFuncCardName($event)" placeholder="e.g Jane Appleased"
-                  maxlength="25" type="text" required #name="ngModel" />
-              <div *ngif='card_holder_bool' class="alert alert-danger">Must have more than 4 characters
-              </div>
+        <!-- input area -->
+        <div class="info-container">
+            <form #forms4="ngForm">
+                <!-- name holder -->
+                <label>cardholder name</label>
+                <input id="card_holder" class="cardholder_name form-control" name="card_holder"
+                    [(ngModel)]="card_holder" (keyup)="keyFuncCardName($event)" placeholder="e.g Jane Appleased"
+                    maxlength="25" type="text" required #name="ngModel" />
+                <div *ngIf="card_holder_bool" class="error">Must have more than 4 characters
+                </div>
 
-              <!-- number -->
-              <label>card number</label>
-              <input id="card_number_value" class="card_number" name="card_number"
-                  placeholder="e.g 1234 5678 9123 0000" maxlength="19" type="text" (keyup)="keyFuncCardNumber($event)"
-                  [(ngModel)]="card_number" required #name="ngModel" />
-              <section *ngif="card_number_bool" class="alert alert-danger">Must have more than 4 characters
-              </section>
+                <!-- number -->
+                <label>card number</label>
+                <input id="card_number" class="card_number" name="card_number" placeholder="e.g 1234 5678 9123 0000"
+                    maxlength="19" type="text" (keyup)="keyFuncCardNumber($event)" [(ngModel)]="card_number" required
+                    #name="ngModel" />
+                <section *ngIf="card_number_bool" class="error">Must have 16 characters
+                </section>
 
-              <!-- date and the cvc -->
-              <div class="date_cvc">
+                <!-- date and the cvc -->
+                <div class="date_cvc">
 
-                  <!-- mm\yy -->
-                  <label class="date form-control">exp. Date (mm/yy)</label>
-                  <input class="mm form-control" required placeholder="MM" type="text" name="exp_mm"
-                      [(ngModel)]="exp_mm" placeholder="e.g 01" maxlength="2" #name="ngModel"
-                      (keyup)="keyFuncCardMonth($event)" />
-                  <input class="yy" required placeholder="YY" type="text" name="exp_yy" [(ngModel)]="exp_yy"
-                      placeholder="e.g 20" maxlength="2" #name="ngModel" (keyup)="keyFuncCardYear($event)" />
+                    <!-- mm\yy -->
+                    <label class="date">exp. Date (mm/yy)</label>
+                    <input id="exp_mm" class="exp_mm" required placeholder="MM" type="text" name="exp_mm"
+                        [(ngModel)]="exp_mm" placeholder="e.g 01" maxlength="2" #name="ngModel"
+                        (keyup)="keyFuncCardMonth($event)" />
 
-                  <!-- cvc -->
-                  <label class="cvc">cvc</label>
-                  <input class="cvc_digit form-control" required type="text" placeholder="e.g 000" [(ngModel)]="cvc"
-                      maxlength="3" name="cvc" type="text" #name="ngModel" (keyup)="keyFuncCardCvc($event)" />
+                    <div *ngIf="exp_mm_bool" class="error">Can't be blank</div>
 
-              </div>
-              <div class="date_cvc">
-                  <div *ngif="exp_mm_bool" class="alert alert-danger">Must have more than 4 characters</div>
-                  <div *ngif="exp_yy_bool" class="alert alert-danger">Must have more than 4 characters</div>
-                  <div *ngif="cvc_bool" class="alert alert-danger">Must have more than 4 characters</div>
-              </div>
-              <button type="button" (click)="onSubmit()">Confirm</button>
-          <!-- </form> -->
-          <!-- Confirm button -->
-      </div>
+                    <input id="exp_yy" class="exp_yy" required placeholder="YY" type="text" name="exp_yy"
+                        [(ngModel)]="exp_yy" placeholder="e.g 20" maxlength="2" #name="ngModel"
+                        (keyup)="keyFuncCardYear($event)" />
 
-      <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a
-              href="https://github.com/Kennedy-was-taken/interactive-card-details-form-main/tree/mobile_design">Tokelo</a>.
-      </div>
+                    <div *ngIf="exp_yy_bool" class="error">Can't be blank</div>
 
-  </div>
+                    <!-- cvc -->
+                    <label class="cvc">cvc</label>
+                    <input id="cvc" class="cvc_digitl" required type="text" placeholder="e.g 000" [(ngModel)]="cvc"
+                        maxlength="3" name="cvc" type="text" #name="ngModel" (keyup)="keyFuncCardCvc($event)" />
+
+                    <div *ngIf="cvc_bool" class="error">Can't be blank or have less than 3 digits</div>
+
+                </div>
+                <button type="button" (click)="onSubmit()">Confirm</button>
+            </form>
+            <!-- Confirm button -->
+        </div>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a
+                href="https://github.com/Kennedy-was-taken/interactive-card-details-form-main/tree/mobile_design">Tokelo</a>.
+        </div>
+
+    </div>
 
 </section>
 
@@ -69,22 +72,22 @@
 <!-- z-index: 1, card -->
 <section class="image_container">
 
-  <!-- back card -->
-  <div class="image_back_card">
-      <label class="image_back_card_sec_code" for="cvc" [textContent]="cvc_content"></label>
-  </div>
+    <!-- back card -->
+    <div class="image_back_card">
+        <label class="image_back_card_sec_code" for="cvc" [textContent]="cvc_content"></label>
+    </div>
 
-  <!-- front card -->
-  <div class="image_front_card">
+    <!-- front card -->
+    <div class="image_front_card">
 
-      <img src="../assets/images/card-logo.svg" alt="front card logo" class="image_front_card_logo" />
-      <label id="test" class="image_front_card_number" for="card_number" [textContent]="card_number_content"></label>
+        <img src="../assets/images/card-logo.svg" alt="front card logo" class="image_front_card_logo" />
+        <label id="test" class="image_front_card_number" for="card_number" [textContent]="card_number_content"></label>
 
-      <div class="image_front_card_container">
-          <label class="image_front_card_name" for="card_holder" [textContent]="card_holder_content"></label>
-          <label class="image_front_card_date">{{exp_mm_content}}/{{exp_yy_content}}</label>
-      </div>
+        <div class="image_front_card_container">
+            <label class="image_front_card_name" for="card_holder" [textContent]="card_holder_content"></label>
+            <label class="image_front_card_date">{{exp_mm_content}}/{{exp_yy_content}}</label>
+        </div>
 
-  </div>
+    </div>
 
 </section>

@@ -43,15 +43,39 @@
                 /* red */
             }
 
+            .error{
+                font-size: 11px;
+                color: #a94442;
+                margin-bottom: 10px;
+            }
+
+            
             .date_cvc {
                 display: grid;
                 grid-template-columns: 20% 30% 1fr;
                 grid-gap: 5%;
 
+                .error:nth-child(3){
+                    grid-row-start: 3;
+                    grid-column-start: 1;
+                }
+    
+                 .error:nth-child(5){
+                    grid-row-start: 3;
+                    grid-column-start: 2;
+                }
+                
+    
+                 .error:nth-child(8){
+                    grid-row-start: 3;
+                    grid-column-start: 3;
+                }
+    
+
                 .date {
                     grid-row-start: 1;
                     grid-column-start: 1;
-                    grid-column-end: 3;
+                    grid-column-end: 2;
 
                 }
 
@@ -64,6 +88,8 @@
                     grid-row-start: 2;
                     grid-column-start: 2;
                 }
+
+                
 
                 .cvc {
                     grid-row-start: 1;
