@@ -1,0 +1,18 @@
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url(../assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+// defining mixing with two parameters
+@mixin font_size($size : 18px, $color : black, $letter_spacing: 0.5vw){
+    font-family: SpaceGrotesk;
+    font-size: $size;
+    color: $color;
+    letter-spacing: $letter_spacing;
+}
+
+// defining mixing with two parameters
+@mixin font_upper_case($size : 18px, $color : black, $letter_spacing: 0.5vw){
+    @include font_size($size , $color, $letter_spacing);
+    text-transform: uppercase;
+}
