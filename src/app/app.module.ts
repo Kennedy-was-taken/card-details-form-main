@@ -7,12 +7,10 @@ import { NgIf } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SuccessMessageComponent } from './success-message/success-message.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SuccessMessageComponent
+    AppComponent
   ],
   imports: [
     CommonModule,

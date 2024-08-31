@@ -132,7 +132,7 @@
             position: absolute;
             align-items: center;
             height: 80%;
-            width: 86%;
+            width: 91%;
             background-color: white;
 
             .success_image {
@@ -145,8 +145,9 @@
             }
             
             p{
-                @include font_size(3dvw, grey);
+                @include font_size(4dvw, grey);
                 letter-spacing: 0.1vw;
+                margin: 0;
             }
             
             button{
@@ -375,7 +376,7 @@
             position: absolute;
             justify-content: center;
             align-items: center;
-            width: 35vw;
+            width: 60%;
             height: 35rem;
             background-color: white;
 

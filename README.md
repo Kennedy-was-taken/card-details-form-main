@@ -11,7 +11,6 @@ This is a solution to the [Interactive card details form challenge on Frontend M
   - [Links](#links)
 - [My process](#my-process)
   - [Preview function](#preview-function)
-  - [What I learned](#what-i-learned)
   - [Built with](#built-with)
   - [Author](#author)
 
@@ -36,29 +35,33 @@ Users should be able to:
 
 #### Mobile perspective:
 
-  <!-- - Mobile Home page
+  - Mobile view
 
-  ![mobile-home-page](./src/assets/content-images/mobile-home-page.PNG)
+  ![mobile-view](./src/assets/content/Mobile_view_empty.png)
 
-  - Mobile Sidebar
+  - Mobile fields filled
 
-  ![mobile-side-ba](./src/assets/content-images/mobile-side-bar.PNG)
+  ![mobile-fields-filled](./src/assets/content/Mobile_fields_filled.png)
 
-  - Mobile Sidebar active options
+  - Mobile Success Popup
 
-  ![mobile-side-bar-active-options](./src/assets/content-images/mobile-side-bar-active-options.PNG) -->
+  ![mobile-Success-Popup](./src/assets/content/Mobile_Success_Popup.png)
 
 #### Desktop perspective:
 
-  <!-- - Desktop Home page
+  - Desktop view
 
-  ![desktop-home-page](./src/assets/content-images/desktop-home-page.PNG)
+  ![desktop-view](./src/assets/content/Desktop_view_empty.png)
 
-  - Desktop topbar active option
+  - Desktop fields filled
 
-  ![desktop-top-bar-active-options](./src/assets/content-images/desktop-top-bar-active-option.PNG) -->
+  ![desktop-fields-filled](./src/assets/content/Desktop_fields_filled.png)
 
-### What I learned
+  - Desktop Success Popup
+
+  ![desktop-Success-Popup](./src/assets/content/Desktop_Success_Popup.png)
+
+<!-- ### What I learned -->
 
   <!-- 1. Creating a Click Outside Directive in Angular:
 
@@ -80,19 +83,17 @@ Users should be able to:
 
 ### Built with
 
-<!-- - Semantic HTML5 markup
+- Semantic HTML5 markup
 - Scss
 - Flexbox
 - Mobile-first workflow
 - @media
-- @angular/animations
-- @KeyFrame
-- Angular -->
+- Angular
 
 ## Author
 
 - Github Profile: [Kennedy-was-taken](https://github.com/Kennedy-was-taken)
-<!-- - Frontend Mentor : [@Kennedy-was-taken](https://www.frontendmentor.io/profile/Kennedy-was-taken) -->
-=======
-# card-details-form-main
+- Frontend Mentor : [@Kennedy-was-taken](https://www.frontendmentor.io/profile/Kennedy-was-taken)
+
+<!-- # card-details-form-main -->
 
