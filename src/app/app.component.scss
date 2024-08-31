@@ -43,39 +43,39 @@
                 /* red */
             }
 
-            .error{
+            .error {
                 font-size: 11px;
                 color: #a94442;
                 margin-bottom: 10px;
             }
 
-            
+
             .date_cvc {
                 display: grid;
                 grid-template-columns: 20% 30% 1fr;
-                grid-gap: 5%;
+                grid-gap: 8%;
 
-                .error:nth-child(3){
+                .error_container1 {
                     grid-row-start: 3;
                     grid-column-start: 1;
                 }
-    
-                 .error:nth-child(5){
+
+                .error_container2 {
                     grid-row-start: 3;
                     grid-column-start: 2;
                 }
-                
-    
-                 .error:nth-child(8){
+
+
+                .error_container3 {
                     grid-row-start: 3;
                     grid-column-start: 3;
                 }
-    
+
 
                 .date {
                     grid-row-start: 1;
                     grid-column-start: 1;
-                    grid-column-end: 2;
+                    grid-column-end: 3;
 
                 }
 
@@ -89,7 +89,7 @@
                     grid-column-start: 2;
                 }
 
-                
+
 
                 .cvc {
                     grid-row-start: 1;
@@ -115,12 +115,48 @@
                 border-radius: 3dvw;
                 border-style: solid;
             }
+
+            label {
+                display: flex;
+                margin: 2vh 0px;
+                @include font_upper_case(3.5dvw, hsl(274, 8%, 36%));
+                font-weight: bold;
+            }
         }
 
-        label {
-            margin: 2vh 0px;
-            @include font_upper_case(3.5dvw, hsl(274, 8%, 36%));
-            font-weight: bold;
+        //come back
+        .info-container:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            align-items: center;
+            height: 80%;
+            width: 86%;
+            background-color: white;
+
+            .success_image {
+                width: 4rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .header_mid{
+                @include font_size(5dvw, black);
+            }
+            
+            p{
+                @include font_size(3dvw, grey);
+                letter-spacing: 0.1vw;
+            }
+            
+            button{
+                height: 12dvw;
+            }
+            
+            button:hover{
+                cursor: pointer;
+            }
+
         }
 
         input {
@@ -129,6 +165,11 @@
             border-radius: 1.5dvw;
             width: 100%;
             padding-left: 10px;
+        }
+
+
+        input:hover {
+            cursor: pointer;
         }
 
         .attribution {
@@ -318,13 +359,50 @@
                     border-radius: 1vw;
                     border-style: solid;
                 }
+
+                label {
+                    margin: 1vh 0px;
+                    @include font_upper_case(0.8vw, hsl(274, 8%, 36%));
+                    font-weight: bold;
+                }
             }
 
-            label {
-                margin: 1vh 0px;
-                @include font_upper_case(0.8vw, hsl(274, 8%, 36%));
-                font-weight: bold;
+             //come back
+        .info-container:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            width: 35vw;
+            height: 35rem;
+            background-color: white;
+
+            .success_image {
+                width: 4rem;
+                margin-bottom: 0.5rem;
             }
+            
+            .header_mid{
+                @include font_size(1.8vw, black);
+            }
+            
+            p{
+                @include font_size(1.4vw, grey);
+                letter-spacing: 0.1vw;
+            }
+            
+            button{
+                height: 3.5vw;
+            }
+            
+            button:hover{
+                cursor: pointer;
+            }
+
+        }
+
 
             input {
                 border: 1px solid var(--Light_grayish_violet);

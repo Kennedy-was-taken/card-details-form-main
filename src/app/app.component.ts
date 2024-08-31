@@ -57,6 +57,7 @@ export class AppComponent {
   exp_mm_bool: boolean = false;
   exp_yy_bool: boolean = false;
   cvc_bool: boolean = false;
+  pop_up: boolean = false;
 
 
   counter: number | undefined;
@@ -79,8 +80,25 @@ export class AppComponent {
     this.exp_yy_bool = this.validate.checkCardYear(this.exp_yy);
     this.cvc_bool = this.validate.checkCardCvc(this.cvc);
 
+    if(this.card_holder_bool == false && this.card_number_bool == false && this.exp_mm_bool == false && this.exp_yy_bool == false && this.cvc_bool == false){
+
+      this.pop_up = true;
+
+      this.card_holder = '';
+      this.card_number = '';
+      this.exp_mm = '';
+      this.exp_yy = '';
+      this.cvc = '';
+    }
+
     // this.validate.initValidation(this.card_holder_content, this.card_number_content, this.exp_mm_content, this.exp_yy_content, this.cvc_content);
     console.log("I was clicked");
+  }
+
+  public btnSubmit() : void{
+      this.pop_up = false;
+      
+      this.ngOnInit();
   }
 
   public changeBorder(): void{
@@ -131,10 +149,6 @@ export class AppComponent {
     else{
       this.cvc_id!.style.borderColor  = "unset";
     }
-  }
-
-  public test() : boolean{
-    return true;
   }
 
   public keyFuncCardName(x: KeyboardEvent): void {

@@ -10,8 +10,8 @@
         <!-- put the form here -->
 
         <!-- input area -->
-        <div class="info-container">
-            <form #forms4="ngForm">
+        <div class="info-container" *ngIf="true">
+            <form #forms="ngForm">
                 <!-- name holder -->
                 <label>cardholder name</label>
                 <input id="card_holder" class="cardholder_name form-control" name="card_holder"
@@ -37,25 +37,38 @@
                         [(ngModel)]="exp_mm" placeholder="e.g 01" maxlength="2" #name="ngModel"
                         (keyup)="keyFuncCardMonth($event)" />
 
-                    <div *ngIf="exp_mm_bool" class="error">Can't be blank</div>
+                    <div class="error_container1">
+                        <div *ngIf="exp_mm_bool" class="error">Can't be blank</div>
+                    </div>
 
                     <input id="exp_yy" class="exp_yy" required placeholder="YY" type="text" name="exp_yy"
                         [(ngModel)]="exp_yy" placeholder="e.g 20" maxlength="2" #name="ngModel"
                         (keyup)="keyFuncCardYear($event)" />
 
-                    <div *ngIf="exp_yy_bool" class="error">Can't be blank</div>
+                    <div class="error_container2">
+                        <div *ngIf="exp_yy_bool" class="error">Can't be blank</div>
+                    </div>
 
                     <!-- cvc -->
                     <label class="cvc">cvc</label>
                     <input id="cvc" class="cvc_digitl" required type="text" placeholder="e.g 000" [(ngModel)]="cvc"
                         maxlength="3" name="cvc" type="text" #name="ngModel" (keyup)="keyFuncCardCvc($event)" />
 
-                    <div *ngIf="cvc_bool" class="error">Can't be blank or have less than 3 digits</div>
+                    <div class="error_container3">
+                        <div *ngIf="cvc_bool" class="error">Can't be blank or have less than 3 digits</div>
+                    </div>
 
                 </div>
                 <button type="button" (click)="onSubmit()">Confirm</button>
             </form>
-            <!-- Confirm button -->
+
+        </div>
+
+        <div *ngIf="this.pop_up" class="info-container">
+            <img class="success_image" src="../assets/images/icon-complete.svg" alt="success image"/>
+            <h2 class="header_mid">THANK YOU!</h2>
+            <p>We've added your card details</p>
+            <button type="button" (click)="btnSubmit()">Continue</button>
         </div>
 
         <div class="attribution">
