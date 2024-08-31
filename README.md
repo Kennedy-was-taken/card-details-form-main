@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub code solution URL](https://github.com/Kennedy-was-taken/interactive-card-details-form-main.git)
-<!-- - Live site Url : [Vercel QR code app](https://intro-section-with-dropdown-navigation-lilac.vercel.app) -->
+- Solution URL: [GitHub code solution URL](https://github.com/Kennedy-was-taken/card-details-form-main)
+- Live site Url : [Vercel QR code app](https://card-details-form-main-umber.vercel.app)
 
 ### Preview functions
 
